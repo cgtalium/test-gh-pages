@@ -1,0 +1,29 @@
+{
+  "updated": "2026-11-27T06:00:00Z",
+  "projects": [
+    {
+      "id": "mdn-ru",
+      "name": "MDN / translated-content",
+      "locale": "ru",
+      "status": "warn",
+      "message": "отстаёт на 3 дня",
+      "source": "github"
+    },
+    {
+      "id": "some-project",
+      "name": "Some Project",
+      "locale": "de",
+      "status": "ok",
+      "message": "перевод 98%",
+      "source": "weblate"
+    },
+    {
+      "id": "broken-one",
+      "name": "Broken Source",
+      "locale": "-",
+      "status": "error",
+      "message": "источник недоступен",
+      "source": "github"
+    }
+  ]
+}
