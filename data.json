@@ -1,29 +1,15 @@
 {
-  "updated": "2026-11-27T06:00:00Z",
+  "updated": "2026-11-27T07:52:30+00:00",
   "projects": [
     {
-      "id": "mdn-ru",
-      "name": "MDN / translated-content",
-      "locale": "ru",
-      "status": "warn",
-      "message": "отстаёт на 3 дня",
-      "source": "github"
-    },
-    {
-      "id": "some-project",
-      "name": "Some Project",
-      "locale": "de",
+      "id": "compareplus",
+      "name": "ComparePlus (Notepad++)",
+      "locale": "customizable",
       "status": "ok",
-      "message": "перевод 98%",
-      "source": "weblate"
-    },
-    {
-      "id": "broken-one",
-      "name": "Broken Source",
-      "locale": "-",
-      "status": "error",
-      "message": "источник недоступен",
-      "source": "github"
+      "message": "актуален (2026-09-17)",
+      "source": "pnedev/comparePlus",
+      "last_locale_change": "2026-09-17T08:36:13+03:00",
+      "last_original_change": "2026-09-17T08:36:13+03:00"
     }
   ]
 }
