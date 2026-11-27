@@ -1,0 +1,12 @@
+projects:
+  - id: compareplus
+    name: ComparePlus (Notepad++)
+    source:
+      type: github
+      repo: pnedev/comparePlus
+      watch:                          # эталон — сам файл английского
+        - "res/localization/english.json"
+      locale_glob: "res/localization/*.json"
+    compare:
+      strategy: commit_date
+      stale_after_days: 30
