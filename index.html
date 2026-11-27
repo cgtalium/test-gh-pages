@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; }
+  h1 { font-size: 1.4rem; }
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  th, td { border: 1px solid #ddd; padding: .5rem .75rem; text-align: left; }
+  th { background: #eee; }
+  .ok      { color: #1a7f37; }
+  .warn    { color: #9a6700; }
+  .stale   { color: #cf222e; }
+  .error   { color: #57606a; font-style: italic; }
+  .updated { color: #57606a; font-size: .85rem; }
+</style>
+</head>
+<body>
+<h1>Локализация — статус проектов</h1>
+<p class="updated" id="updated"></p>
+<table>
+  <thead>
+    <tr><th>Проект</th><th>Локаль</th><th>Статус</th><th>Источник</th></tr>
+  </thead>
+  <tbody id="rows"></tbody>
+</table>
+
+<script>
+fetch('data.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('updated').textContent =
+      'Обновлено: ' + data.updated;
+    const tbody = document.getElementById('rows');
+    for (const p of data.projects) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${p.name}</td>
+        <td>${p.locale}</td>
+        <td class="${p.status}">${p.message}</td>
+        <td>${p.source}</td>`;
+      tbody.appendChild(tr);
+    }
+  })
+  .catch(e => {
+    document.getElementById('updated').textContent =
+      'Не удалось загрузить data.json: ' + e;
+  });
+</script>
+</body>
+</html>
